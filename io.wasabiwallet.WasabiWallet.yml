@@ -1,6 +1,6 @@
 app-id: io.wasabiwallet.WasabiWallet
 runtime: org.freedesktop.Platform
-runtime-version: "20.08"
+runtime-version: '20.08'
 sdk: org.freedesktop.Sdk
 command: start-wasabiwallet.sh
 finish-args:
@@ -19,24 +19,24 @@ modules:
       - ar x wasabi.deb
       - tar -xf data.tar.xz
 
-      - for size in 256 512; do [[ -e "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png" ]] && install
-        -Dm644 "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png" "/app/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png";
-        done
+      - for size in 256 512; do [[ -e "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png"
+        ]] && install -Dm644 "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png"
+        "/app/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png"; done
 
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.6/Wasabi-1.1.12.6.deb
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb
         dest-filename: wasabi.deb
-        sha256: b2be2883e420cc0a3bfb4e1ca55ea77a239b3f2ffa20cf090f2d97307f148fe7
+        sha256: a99a5365188908f2920ec1a44657688fabe33410fbecf83ad32d3a0ad205d9bf
         x-checker-data:
           type: anitya
           project-id: 183074
           url-template: https://github.com/zkSNACKs/WalletWasabi/releases/download/v$version/Wasabi-$version.deb
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.6/Wasabi-1.1.12.6.deb.asc
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb.asc
         dest-filename: wasabi.deb.asc
-        sha256: 129dd04fc7d7be7a459453bef73c1c634da1d49bceff959bfe163bf29eec5014
+        sha256: 1ddffb9b0405081fa1b76a9aae67e0adc0e5163da929469c94a95a29eaacba83
         x-checker-data:
           type: anitya
           project-id: 183074
