@@ -26,23 +26,24 @@ modules:
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.1.4/Wasabi-2.0.1.4.deb
         dest-filename: wasabi.deb
-        sha256: a99a5365188908f2920ec1a44657688fabe33410fbecf83ad32d3a0ad205d9bf
+        sha256: 2f560453ac04f9d3ce30bf4e54b19c10a984cc4c8a8a962dec355a39b9c5a5d9
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
-          version-query: '.tag_name | sub("^v"; "")'
-          url-query: '.assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url'
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb.asc
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.1.4/Wasabi-2.0.1.4.deb.asc
         dest-filename: wasabi.deb.asc
-        sha256: 1ddffb9b0405081fa1b76a9aae67e0adc0e5163da929469c94a95a29eaacba83
+        sha256: 2a7440aeedd6ca50a707ce2fbee30afd6dba8ff8a6f4b5ff8d1594a8c96b6034
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
-          version-query: '.tag_name | sub("^v"; "")'
-          url-query: '.assets[] | select(.name=="Wasabi-" + $version + ".deb.asc") | .browser_download_url'
+          version-query: .tag_name | sub("^v"; "")
+          url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
+            | .browser_download_url
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/raw/master/PGP.txt
         dest-filename: publickey.gpg
