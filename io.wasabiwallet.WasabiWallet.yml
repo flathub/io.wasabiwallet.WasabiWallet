@@ -32,7 +32,7 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
-          version-query: '.tag_name | sub("^jq-"; "")'
+          version-query: '.tag_name | sub("^v"; "")'
           url-query: '.assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url'
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb.asc
@@ -41,7 +41,7 @@ modules:
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
-          version-query: '.tag_name | sub("^jq-"; "")'
+          version-query: '.tag_name | sub("^v"; "")'
           url-query: '.assets[] | select(.name=="Wasabi-" + $version + ".deb.asc") | .browser_download_url'
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/raw/master/PGP.txt
