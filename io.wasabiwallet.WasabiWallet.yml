@@ -26,17 +26,17 @@ modules:
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12/Wasabi-1.1.12.deb
         dest-filename: wasabi.deb
-        sha256: a99a5365188908f2920ec1a44657688fabe33410fbecf83ad32d3a0ad205d9bf
+        sha256: 62b096b60d9fadd7a62cc26544e024864cdbcddc23ec8292e28e29e62f5c8fbb
         x-checker-data:
           type: anitya
           project-id: 183074
           url-template: https://github.com/zkSNACKs/WalletWasabi/releases/download/v$version/Wasabi-$version.deb
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12.9/Wasabi-1.1.12.9.deb.asc
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v1.1.12/Wasabi-1.1.12.deb.asc
         dest-filename: wasabi.deb.asc
-        sha256: 1ddffb9b0405081fa1b76a9aae67e0adc0e5163da929469c94a95a29eaacba83
+        sha256: 6094f884f1ebcbbc200f954398bb642d617c2bd82276c37cc7b5cb68b3625ee5
         x-checker-data:
           type: anitya
           project-id: 183074
