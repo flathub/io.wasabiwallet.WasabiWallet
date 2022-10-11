@@ -19,7 +19,7 @@ modules:
       - ar x wasabi.deb
       - tar -xf data.tar.xz
 
-      - for size in 256 512; do [[ -e "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png"
+      - for size in 16 24 32 48 256; do [[ -e "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png"
         ]] && install -Dm644 "usr/share/icons/hicolor/${size}x${size}/apps/wassabee.png"
         "/app/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png"; done
 
