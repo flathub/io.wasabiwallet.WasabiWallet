@@ -26,18 +26,18 @@ modules:
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.1.4/Wasabi-2.0.1.4.deb
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2/Wasabi-2.0.2.deb
         dest-filename: wasabi.deb
-        sha256: 2f560453ac04f9d3ce30bf4e54b19c10a984cc4c8a8a962dec355a39b9c5a5d9
+        sha256: 4447fd834cf3d6592432a92ca42092654edc7f726366d62d43c3a8fe839bbe70
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.1.4/Wasabi-2.0.1.4.deb.asc
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2/Wasabi-2.0.2.deb.asc
         dest-filename: wasabi.deb.asc
-        sha256: 2a7440aeedd6ca50a707ce2fbee30afd6dba8ff8a6f4b5ff8d1594a8c96b6034
+        sha256: 11b59074cb1843c2fa31f58a26d94edbb991138b8af3dce212eb1cb05f569242
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
