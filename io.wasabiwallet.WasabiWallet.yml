@@ -1,15 +1,18 @@
 app-id: io.wasabiwallet.WasabiWallet
 runtime: org.freedesktop.Platform
-runtime-version: '22.08'
+runtime-version: "22.08"
 sdk: org.freedesktop.Sdk
 command: start-wasabiwallet.sh
 finish-args:
   - --socket=x11
   - --share=ipc
-  - --device=dri
+  # for connnecting to hardware wallets
+  - --device=all
   - --socket=pulseaudio
   - --share=network
 modules:
+  - shared-modules/libusb/libusb.json
+
   - name: wasabiwallet
     buildsystem: simple
     build-commands:
@@ -42,7 +45,8 @@ modules:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
+          url-query:
+            .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
             | .browser_download_url
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/raw/master/PGP.txt
