@@ -1,6 +1,6 @@
 app-id: io.wasabiwallet.WasabiWallet
 runtime: org.freedesktop.Platform
-runtime-version: "22.08"
+runtime-version: '22.08'
 sdk: org.freedesktop.Sdk
 command: start-wasabiwallet.sh
 finish-args:
@@ -29,24 +29,23 @@ modules:
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2.1/Wasabi-2.0.2.1.deb
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2.2/Wasabi-2.0.2.2.deb
         dest-filename: wasabi.deb
-        sha256: 9491eac1e11cd56d08109dbca12b7fa8620712aea78c012db1809b4ecc5f1266
+        sha256: 08c7aeccb0b5503458e4f54d0228d2fe24d894a3c4cb2843ee5c1159b1a3e385
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2.1/Wasabi-2.0.2.1.deb.asc
+        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.2.2/Wasabi-2.0.2.2.deb.asc
         dest-filename: wasabi.deb.asc
-        sha256: 0fef7362d3d19bfb4a5e3bd064451e045af66a1887ae80cb9c2dd9d06d8ccce8
+        sha256: dafe38fc4520e3fa16d1e9f504493004be4a61e9fb19348a79bef45268045d96
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query:
-            .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
+          url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
             | .browser_download_url
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/raw/master/PGP.txt
