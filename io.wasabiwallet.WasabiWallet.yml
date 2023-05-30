@@ -37,6 +37,7 @@ modules:
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb") | .browser_download_url
+          is-main-source: true
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.3/Wasabi-2.0.3.deb.asc
         dest-filename: wasabi.deb.asc
