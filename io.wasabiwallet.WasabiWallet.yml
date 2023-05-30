@@ -47,6 +47,7 @@ modules:
           version-query: .tag_name | sub("^v"; "")
           url-query: .assets[] | select(.name=="Wasabi-" + $version + ".deb.asc")
             | .browser_download_url
+          is-main-source: true
       - type: file
         url: https://github.com/zkSNACKs/WalletWasabi/raw/master/PGP.txt
         dest-filename: publickey.gpg
