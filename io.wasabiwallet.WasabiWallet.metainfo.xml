@@ -23,7 +23,12 @@
     <launchable type="desktop-id">io.wasabiwallet.WasabiWallet.desktop</launchable>
     <screenshots>
         <screenshot type="default">
-            <image>https://camo.githubusercontent.com/aaedaca4f516dde378fc951a78881bda509c457362ccc058da05300d0c9ea276/68747470733a2f2f692e696d6775722e636f6d2f313339626a44482e706e67</image>
+            <image>https://wasabiwallet.io/img/screenshots/webpage_ui_Preview_Transaction.png</image>
+            <caption>Wasabi Wallet Transaction Preview</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://wasabiwallet.io/img/screenshots/webpage_ui_Privacy_Progress.png</image>
+            <caption>Wasabi Wallet Privacy Progress</caption>
         </screenshot>
     </screenshots>
     <releases>
