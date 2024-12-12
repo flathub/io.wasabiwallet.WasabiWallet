@@ -29,9 +29,9 @@ modules:
       - cp -r usr/local/bin/wasabiwallet /app/wasabiwallet
     sources:
       - type: file
-        url: https://github.com/zkSNACKs/WalletWasabi/releases/download/v2.0.7.1/Wasabi-2.0.7.1.deb
+        url: https://github.com/WalletWasabi/WalletWasabi/releases/download/v2.3.1/Wasabi-2.3.1.deb
         dest-filename: wasabi.deb
-        sha256: dd2730ebf02a4e6cb0ee09ff0b0524f9541f8a41aca7ec07567ac677ca35df58
+        sha256: 11cdffc3133fc8b40a4b0cf6f9abd336d558db8d35c002f7ee3daed1a0b3991b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/zkSNACKs/WalletWasabi/releases/latest
